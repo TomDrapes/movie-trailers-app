@@ -1,0 +1,171 @@
+h2 {
+  color: #FBFBF2;
+  text-shadow: 2px 2px 2px #000;  
+}
+
+ul{
+  padding: 0px;
+  margin: 0px;
+}
+
+/*
+*
+*  HEADER STUFF
+*
+*/
+
+.header{
+  background-color: #847577;
+  height: 50px;  
+  padding: 10px 10px 10px 10px;
+}
+
+.title{
+  font-family: 'Anton', Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 2px #000;
+  font-size: 44px;
+  color: #FBFBF2;
+  float: left;
+}
+
+.search-container{
+  float: right;
+  width: 200px;
+  
+  margin: 15px 40px 0px 0px;
+}
+
+.search-bar{
+  width: 100%;
+}
+
+/*
+*
+* VIDEO BOX STUFF
+*
+*
+*/
+
+.video-box{
+  width: 720px;
+  height: 480px;
+  border: 1px solid #000;
+  margin: 20px 40px 40px 40px;
+  float: left;
+}
+
+/*
+*
+* Description Box Stuff
+*
+*/
+
+.description-box{
+  width: 436px;
+  height: 480px;
+  border: 1px solid #000;
+  float: left;
+  margin: 20px 40px 40px 0px;
+  padding: 0px;  
+  background-color: #CFD2CD;
+}
+
+.poster{
+  float: left;
+  margin: 5px;
+}
+
+.overview{
+  float: left;
+  padding: 10px;
+}
+
+/*
+*
+* Move Title stuff
+*
+*/
+
+.movie-title{
+  font-size: 44px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*
+*
+* Actors List stuff
+*
+*/
+
+.actors-list-container{
+  border: 1px solid #000;
+  width: 1198px;
+  height: 200px;
+  float: left;
+  clear: left;
+  margin: 0px 40px 40px 40px;
+  background-color: #CFD2CD;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 0px;
+}
+.actors-list{
+  
+}
+
+.actor-profile{
+  display: inline;
+  list-style: none;  
+}
+
+/*
+*
+* Reviews Box Stuff
+*
+*/
+
+.reviews-box{
+  margin: 0px 40px 40px 40px;
+  border: 1px solid #000;
+  width: 720px;
+  height: 480px;
+  float: left;
+  overflow-y: scroll; 
+  background-color: #CFD2CD;  
+}
+
+.reviews-text{
+  padding:0px 10px 10px 10px;
+}
+
+/*
+*
+* Recommendations Box Stuff
+*
+*/
+
+.recommendations-box{
+  margin: 0px 40px 40px 0px;
+  border: 1px solid #000;
+  width: 436px;
+  height: 480px;
+  float: left;
+  background-color: #CFD2CD;
+}
+
+/*
+*
+* Footer stuff
+*
+*/
+
+.footer{
+  background-color: #847577;
+  height: auto;
+  padding: 4px;
+  clear: both;
+  font-size: 12px;
+  color: #FBFBF2;
+}
