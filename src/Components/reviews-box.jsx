@@ -25,9 +25,12 @@ export default class ReviewsBox extends Component{
         return(
             <div className='reviews-box'>                
                 <div className='reviews-text'>
-                    <h2>REVIEWS</h2>
-                    <div className='author'><strong>Author:</strong> {this.state.reviews.author}</div><br/>
+                    <div className="reviews-overlay">
+                        <h2>REVIEWS</h2>
+                    </div>
+                    <div className='author'><br/><br/><strong>Author:</strong> {this.state.reviews.author}<br/>
                     {this.state.reviews.content}
+                    </div>
                 </div>
             </div>
         )

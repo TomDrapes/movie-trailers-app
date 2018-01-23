@@ -1,12 +1,20 @@
 h2 {
   color: #FBFBF2;
   text-shadow: 2px 2px 2px #000;  
+  font-family: 'Anton', Arial, Helvetica, sans-serif;
+  
 }
 
 ul{
   padding: 0px;
   margin: 0px;
 }
+
+li{
+  list-style: none;
+}
+
+
 
 /*
 *
@@ -16,7 +24,7 @@ ul{
 
 .header{
   background-color: #847577;
-  height: 50px;  
+  height: 80px;  
   padding: 10px 10px 10px 10px;
 }
 
@@ -26,17 +34,17 @@ ul{
   font-size: 44px;
   color: #FBFBF2;
   float: left;
+  
 }
 
 .search-container{
   float: right;
   width: 200px;
-  
-  margin: 15px 40px 0px 0px;
+  margin: 15px 40px 0px 0px;  
 }
 
 .search-bar{
-  width: 100%;
+  width: 100%; 
 }
 
 /*
@@ -87,9 +95,11 @@ ul{
 */
 
 .movie-title{
+  font-family: 'Anton', Arial, Helvetica, sans-serif;
   font-size: 44px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 20px;    
+  clear: both;
 }
 
 /*
@@ -110,15 +120,20 @@ ul{
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 0px;
-}
-.actors-list{
   
 }
 
 .actor-profile{
   display: inline;
   list-style: none;  
+  
 }
+
+.actors-overlay{
+  position: absolute;  
+  z-index: 10;
+}
+
 
 /*
 *
@@ -136,8 +151,13 @@ ul{
   background-color: #CFD2CD;  
 }
 
-.reviews-text{
+.author{
   padding:0px 10px 10px 10px;
+}
+
+.reviews-overlay{
+  position: absolute;  
+  z-index: 10;
 }
 
 /*
@@ -153,8 +173,13 @@ ul{
   height: 480px;
   float: left;
   background-color: #CFD2CD;
+  overflow-y: scroll;
 }
 
+.recommendations-overlay{
+  position: absolute;  
+  z-index: 10;
+}
 /*
 *
 * Footer stuff

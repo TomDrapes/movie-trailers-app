@@ -36,7 +36,10 @@ export default class ActorsList extends Component{
             );
         });
         return (
-            <div className='actors-list-container'>  
+            <div className='actors-list-container'>
+                <div className="actors-overlay">
+                    <h2>CAST</h2>
+                </div>
                 <div className="actors-list">          
                     <ul>
                         {actors}            

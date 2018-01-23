@@ -15,7 +15,7 @@ export default function DescriptionBox(props){
             </div>
             
             <div className="overview">
-                <br/><strong>Overview:</strong> {props.data.overview}<br/>
+                <strong>Overview:</strong> {props.data.overview}<br/>
             </div>
                          
         </div>
