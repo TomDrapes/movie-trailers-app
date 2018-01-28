@@ -2,7 +2,7 @@ h2 {
   color: #FBFBF2;
   text-shadow: 2px 2px 2px #000;  
   font-family: 'Anton', Arial, Helvetica, sans-serif;
-  
+  margin: 5px;
 }
 
 ul{
@@ -25,7 +25,7 @@ li{
 .header{
   background-color: #847577;
   height: 80px;  
-  padding: 10px 10px 10px 10px;
+  padding: 7px 10px 7px 10px;
 }
 
 .title{
@@ -33,9 +33,14 @@ li{
   text-shadow: 2px 2px 2px #000;
   font-size: 44px;
   color: #FBFBF2;
-  float: left;
-  
+  float: left;  
 }
+
+.logo{
+  float: left;
+  margin-right: 5px;
+}
+
 
 .search-container{
   float: right;
@@ -57,7 +62,7 @@ li{
 .video-box{
   width: 720px;
   height: 480px;
-  border: 1px solid #000;
+  /*border: 1px solid #000;*/
   margin: 20px 40px 40px 40px;
   float: left;
 }
@@ -71,11 +76,12 @@ li{
 .description-box{
   width: 436px;
   height: 480px;
-  border: 1px solid #000;
+  /*border: 1px solid #000;*/
   float: left;
   margin: 20px 40px 40px 0px;
   padding: 0px;  
   background-color: #CFD2CD;
+  overflow-y: scroll;
 }
 
 .poster{
@@ -143,7 +149,7 @@ li{
 
 .reviews-box{
   margin: 0px 40px 40px 40px;
-  border: 1px solid #000;
+  /*border: 1px solid #000;*/
   width: 720px;
   height: 480px;
   float: left;
@@ -188,9 +194,18 @@ li{
 
 .footer{
   background-color: #847577;
-  height: auto;
-  padding: 4px;
+  height: 58px;
+  padding: 5px;
   clear: both;
   font-size: 12px;
-  color: #FBFBF2;
+  color: #FBFBF2;  
 }
+.moviedb-logo{
+  float: left;
+}
+
+.footer-text{
+  float: left;
+  margin-left: 10px;
+}
+

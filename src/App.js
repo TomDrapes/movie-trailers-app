@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Axios from 'axios';
 import YTSearch from 'youtube-api-search';
+import _ from 'lodash';
 
 import Header from './Components/header';
 import VideoBox from './Components/video-box';
@@ -29,13 +30,14 @@ class App extends Component {
       trailer: null
     };
 
-    this.getData();
+    
+    this.getData('the godfather');
     this.videoSearch('the godfather trailer');
 
   }
 
-  getData(){
-    const url = `${URL}&query=the+godfather&append_to_response=reviews`;      
+  getData(term){
+    const url = `${URL}&query=${term}&append_to_response=reviews`;      
       Axios.get(url)
         .then((response) => {
           console.log(response);        
@@ -53,10 +55,17 @@ class App extends Component {
     });      
   }
 
+  getTrailer(term){
+    this.getData(term);
+    term = term.concat(" trailer");
+    this.videoSearch(term);
+  }
+
   render() {
+    const getTrailer = _.debounce((term) => { this.getTrailer(term) }, 300);
     return (
       <div className="App">        
-        <Header />
+        <Header getTrailer={getTrailer}/>
         <MovieTitle data={this.state.data}/>
         <VideoBox trailer={this.state.trailer}/>
         <DescriptionBox data={this.state.data}/>
