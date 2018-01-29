@@ -13,12 +13,14 @@ class SearchBar extends Component{
 
     render(){
         return(
-            <div className='search-container'>                
-                <input className='search-bar'
+            <div className='search-container input-group'>                
+                <input className='form-control'
                 onChange={event => this.onInputChange(event.target.value)}
                 value={this.state.term}                
-                placeholder='Search for show/movie...'/>                                    
-                <button onClick={this.search}>Search</button>
+                placeholder='Search for show/movie...'/> 
+                <span className='input-group-btn'>                                   
+                <button className="btn btn-secondary" onClick={this.search}>Search</button>
+                </span>
             </div>
         )    
     }

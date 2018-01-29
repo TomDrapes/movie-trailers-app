@@ -44,12 +44,16 @@ li{
 
 .search-container{
   float: right;
-  width: 200px;
+  width: 300px;
   margin: 15px 40px 0px 0px;  
 }
 
 .search-bar{
-  width: 100%; 
+  width: 70%; 
+}
+
+.searchButton{
+  float: right;
 }
 
 /*
