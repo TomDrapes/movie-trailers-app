@@ -1,8 +1,11 @@
 import React from 'react';
 
 export default function DescriptionBox(props){
-    const url = `https://image.tmdb.org/t/p/w500/${props.data.poster_path}`;
-    return(
+    var url = '';
+    if(props.data){
+        url = `https://image.tmdb.org/t/p/w500/${props.data.poster_path}`;
+    }
+    return props.data ? (
         <div className='description-box'>                        
             <div className='poster'>
                 <img src={url} alt='poster' width='195px' height='auto' />  
@@ -18,6 +21,10 @@ export default function DescriptionBox(props){
                 <strong>Overview:</strong> {props.data.overview}<br/>
             </div>
                          
+        </div>
+    ):(
+        <div className='description-box'>
+            Description not available
         </div>
     )
 }

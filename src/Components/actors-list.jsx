@@ -25,8 +25,10 @@ export default class ActorsList extends Component{
         //This will scroll the ref div to the top on update to maintain the absolute
         //positioned header
         this._div.scrollLeft = 0;
-        
-        const CREDITS_URL = `http://api.themoviedb.org/3/movie/${nextProps.data.id}/credits?api_key=b75fae778d68850454ff779b6948316d`;
+        var CREDITS_URL = '';
+        if(nextProps.data){
+            CREDITS_URL = `http://api.themoviedb.org/3/movie/${nextProps.data.id}/credits?api_key=b75fae778d68850454ff779b6948316d`;
+        }
         Axios.get(CREDITS_URL)
         .then((response) => {
           console.log('Credits: ', response);        
@@ -39,12 +41,14 @@ export default class ActorsList extends Component{
       
     }
     render(){
-        
-        const actors = this.state.credits.map((actor) => {
-            return(
-                <ActorProfile data={actor} key={actor.cast_id}/>                                                
-            );
-        });
+        var actors;
+        if(this.state.credits){
+            actors = this.state.credits.map((actor) => {
+                return(
+                    <ActorProfile data={actor} key={actor.cast_id}/>                                                
+                );
+            });
+        }
         return (
             //Set div as ref to be able to reset scroll on updates
             <div className='actors-list-container' ref={(ref) => this._div = ref}>

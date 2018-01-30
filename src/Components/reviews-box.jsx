@@ -23,7 +23,10 @@ export default class ReviewsBox extends Component{
         //positioned header
         this._div.scrollTop = 0;
 
-        const REVIEW_URL = `http://api.themoviedb.org/3/movie/${nextProps.data.id}/reviews?api_key=b75fae778d68850454ff779b6948316d`
+        var REVIEW_URL;
+        if(nextProps.data){
+            REVIEW_URL = `http://api.themoviedb.org/3/movie/${nextProps.data.id}/reviews?api_key=b75fae778d68850454ff779b6948316d`
+        }
         Axios.get(REVIEW_URL)
         .then((response) => {
           console.log("reviews: ", response.data.results); 
