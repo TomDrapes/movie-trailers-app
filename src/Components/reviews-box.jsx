@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
+import Review from './review';
+
 export default class ReviewsBox extends Component{
     constructor(props){
         super(props);
@@ -8,10 +10,19 @@ export default class ReviewsBox extends Component{
         this.state = {
             reviews: []
         }
+        
+    }
+    componentDidUpdate(){
+        //This will scroll the ref div to the top on update to maintain the absolute
+        //positioned header
+        this._div.scrollTop = 0;
     }
 
     componentWillReceiveProps(nextProps){
-        
+        //This will scroll the ref div to the top on update to maintain the absolute
+        //positioned header
+        this._div.scrollTop = 0;
+
         const REVIEW_URL = `http://api.themoviedb.org/3/movie/${nextProps.data.id}/reviews?api_key=b75fae778d68850454ff779b6948316d`
         Axios.get(REVIEW_URL)
         .then((response) => {
@@ -25,20 +36,25 @@ export default class ReviewsBox extends Component{
     }
 
     render(){
-        console.log('here: ', this.state.reviews);
+        
+        const reviews = this.state.reviews.map((data) => {
+            return(
+                <Review data={data} />                                                
+            );
+        });
+        
         return this.state.reviews.length >= 1 ? (
-            <div className='reviews-box'>                
+            //Set div as ref to be able to reset scroll on updates
+            <div className='reviews-box' ref={(ref) => this._div = ref}> 
                 <div className='reviews-text'>
                     <div className="reviews-overlay">
                         <h2>REVIEWS</h2>
-                    </div>
-                    <div className='author'><br/><br/><strong>Author:</strong> {this.state.reviews[0].author}<br/>
-                    {this.state.reviews[0].content}
-                    </div>
+                    </div>                   
+                    {reviews}
                 </div>
             </div>
         ):(
-            <div className='reviews-box'>                
+            <div className='reviews-box' ref={(ref) => this._div = ref}>                
                 <div className='reviews-text'>
                     <div className="reviews-overlay">
                         <h2>REVIEWS</h2>
@@ -49,5 +65,6 @@ export default class ReviewsBox extends Component{
                 </div>
             </div>
         )
+        
     }
 }

@@ -15,7 +15,17 @@ export default class ActorsList extends Component{
 
     }
 
+    componentDidUpdate(){
+        //This will scroll the ref div to the top on update to maintain the absolute
+        //positioned header
+        this._div.scrollLeft = 0;
+    }
+
     componentWillReceiveProps(nextProps){
+        //This will scroll the ref div to the top on update to maintain the absolute
+        //positioned header
+        this._div.scrollLeft = 0;
+        
         const CREDITS_URL = `http://api.themoviedb.org/3/movie/${nextProps.data.id}/credits?api_key=b75fae778d68850454ff779b6948316d`;
         Axios.get(CREDITS_URL)
         .then((response) => {
@@ -36,7 +46,8 @@ export default class ActorsList extends Component{
             );
         });
         return (
-            <div className='actors-list-container'>
+            //Set div as ref to be able to reset scroll on updates
+            <div className='actors-list-container' ref={(ref) => this._div = ref}>
                 <div className="actors-overlay">
                     <h2>CAST</h2>
                 </div>

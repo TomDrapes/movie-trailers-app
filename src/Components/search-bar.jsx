@@ -13,15 +13,15 @@ class SearchBar extends Component{
 
     render(){
         return(
-            <div className='search-container input-group'>                
+            <form onSubmit={this.search} className='search-container input-group'>                
                 <input className='form-control'
                 onChange={event => this.onInputChange(event.target.value)}
                 value={this.state.term}                
                 placeholder='Search for show/movie...'/> 
                 <span className='input-group-btn'>                                   
-                <button className="btn btn-secondary" onClick={this.search}>Search</button>
+                <button type='submit' className="btn btn-secondary" >Search</button>
                 </span>
-            </div>
+            </form>
         )    
     }
 
@@ -29,7 +29,8 @@ class SearchBar extends Component{
         this.setState({term});
         //this.props.onSearchTermChange(term);
     }
-    search(){
+    search(e){
+        e.preventDefault();
         this.props.onSearchTermChange(this.state.term);
     }
 }

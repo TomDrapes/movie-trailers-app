@@ -70,8 +70,8 @@ class App extends Component {
         <VideoBox trailer={this.state.trailer}/>
         <DescriptionBox data={this.state.data}/>
         <ActorsList data={this.state.data}/> 
-        <ReviewsBox data={this.state.data}/>  
-        <RecommendationsBox data={this.state.data}/>  
+        <ReviewsBox data={this.state.data}/>          
+        <RecommendationsBox data={this.state.data} getTrailer={getTrailer}/>          
         <Footer />           
       </div>
     );
