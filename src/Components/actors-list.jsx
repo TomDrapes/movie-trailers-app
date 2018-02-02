@@ -27,7 +27,7 @@ export default class ActorsList extends Component{
         this._div.scrollLeft = 0;
         var CREDITS_URL = '';
         if(nextProps.data){
-            CREDITS_URL = `http://api.themoviedb.org/3/movie/${nextProps.data.id}/credits?api_key=b75fae778d68850454ff779b6948316d`;
+            CREDITS_URL = `https://api.themoviedb.org/3/movie/${nextProps.data.id}/credits?api_key=b75fae778d68850454ff779b6948316d`;
         }
         Axios.get(CREDITS_URL)
         .then((response) => {

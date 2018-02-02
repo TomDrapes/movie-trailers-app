@@ -26,7 +26,7 @@ export default class RecommendationsBox extends Component{
         this._div.scrollTop = 0;
         var URL;
         if(nextProps.data){
-            URL = `http://api.themoviedb.org/3/movie/${nextProps.data.id}/similar?api_key=b75fae778d68850454ff779b6948316d`
+            URL = `https://api.themoviedb.org/3/movie/${nextProps.data.id}/similar?api_key=b75fae778d68850454ff779b6948316d`
         }
         Axios.get(URL)
         .then((response) => {

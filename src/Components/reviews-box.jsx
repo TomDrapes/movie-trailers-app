@@ -25,7 +25,7 @@ export default class ReviewsBox extends Component{
 
         var REVIEW_URL;
         if(nextProps.data){
-            REVIEW_URL = `http://api.themoviedb.org/3/movie/${nextProps.data.id}/reviews?api_key=b75fae778d68850454ff779b6948316d`
+            REVIEW_URL = `https://api.themoviedb.org/3/movie/${nextProps.data.id}/reviews?api_key=b75fae778d68850454ff779b6948316d`
         }
         Axios.get(REVIEW_URL)
         .then((response) => {
