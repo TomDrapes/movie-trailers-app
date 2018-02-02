@@ -29,21 +29,20 @@ class App extends Component {
       reviews: [],
       trailer: null
     };
-
-    
+        
     this.getData('the godfather');
-    this.videoSearch('the godfather trailer');
-
   }
 
   getData(term){
     const url = `${URL}&query=${term}&append_to_response=reviews`;      
       Axios.get(url)
         .then((response) => {
-          console.log(response);        
+          console.log("resp: ",response);        
           this.setState({                 
             data: response.data.results[0]
           });
+          var date = this.state.data.release_date.split("-", 1);
+          this.videoSearch(term.concat(` trailer ${date[0]}`));
       });           
   }
 
@@ -57,8 +56,6 @@ class App extends Component {
 
   getTrailer(term){
     this.getData(term);
-    term = term.concat(" trailer");
-    this.videoSearch(term);
   }
 
   render() {

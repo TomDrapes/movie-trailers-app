@@ -41,8 +41,9 @@ export default class ReviewsBox extends Component{
     render(){
         
         const reviews = this.state.reviews.map((data) => {
+            
             return(
-                <Review data={data} />                                                
+                <Review data={data} key={data.id}/>                                                
             );
         });
         
