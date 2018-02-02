@@ -17,7 +17,7 @@ class SearchBar extends Component{
                 <input className='form-control'
                 onChange={event => this.onInputChange(event.target.value)}
                 value={this.state.term}                
-                placeholder='Search for show/movie...'/> 
+                placeholder='Enter movie...'/> 
                 <span className='input-group-btn'>                                   
                 <button type='submit' className="btn btn-secondary" >Search</button>
                 </span>

@@ -12,7 +12,7 @@ const Recommendation = (props) => {
     
     return props.data.backdrop_path ? (
         <li className='similar-movie'>
-            <a title={props.data.title}><img src={movieImage} width="auto" height="250px" alt={props.data.title} onClick={search}/></a>
+            <a title={props.data.title}><img src={movieImage} width="100%" height="auto" alt={props.data.title} onClick={search}/></a>
         </li>
     ):(
         <li className="actor-profile">

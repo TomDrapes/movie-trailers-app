@@ -7,7 +7,8 @@ export default function Footer(props){
             <div className='footer-text'>
                 <div>QUICK-TRAILERS&copy;2018. Created by Tom Drapes.</div>
                 <div>This product uses the TMDb API but is not endorsed or certified by TMDb</div>    
-            </div>  
+            </div> 
+            <div className="clear" /> 
                   
         </div>
     )

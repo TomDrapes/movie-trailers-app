@@ -14,7 +14,9 @@ li{
   list-style: none;
 }
 
-
+.clear{
+  clear: both;
+}
 
 /*
 *
@@ -64,10 +66,10 @@ li{
 */
 
 .video-box{
-  width: 720px;
-  height: 480px;
+  width: 50%;
+  /*height: 480px;*/
   /*border: 1px solid #000;*/
-  margin: 20px 40px 40px 40px;
+  margin: 20px 5% 40px 5%;
   float: left;
 }
 
@@ -78,11 +80,11 @@ li{
 */
 
 .description-box{
-  width: 436px;
+  width: 35%;
   height: 480px;
   /*border: 1px solid #000;*/
   float: left;
-  margin: 20px 40px 40px 0px;
+  margin: 20px 5% 40px 0px;
   padding: 0px;  
   background-color: #CFD2CD;
   overflow-y: scroll;
@@ -120,11 +122,11 @@ li{
 
 .actors-list-container{
   border: 1px solid #000;
-  width: 1198px;
+  width: 90%;
   height: 200px;
   float: left;
   clear: left;
-  margin: 0px 40px 40px 40px;
+  margin: 0px 5% 40px 5%;
   background-color: #CFD2CD;
   white-space: nowrap;
   overflow-y: hidden;
@@ -152,9 +154,9 @@ li{
 */
 
 .reviews-box{
-  margin: 0px 40px 40px 40px;
+  margin: 0px 5% 40px 5%;
   /*border: 1px solid #000;*/
-  width: 720px;
+  width: 55%;
   height: 480px;
   float: left;
   overflow-y: scroll; 
@@ -177,9 +179,9 @@ li{
 */
 
 .recommendations-box{
-  margin: 0px 40px 40px 0px;
+  margin: 0px 5% 40px 0px;
   border: 1px solid #000;
-  width: 436px;
+  width: 30%;
   height: 480px;
   float: left;
   background-color: #CFD2CD;
@@ -204,7 +206,7 @@ li{
 
 .footer{
   background-color: #847577;
-  height: 58px;
+  height: auto;
   padding: 5px;
   clear: both;
   font-size: 12px;
@@ -217,5 +219,54 @@ li{
 .footer-text{
   float: left;
   margin-left: 10px;
+  overflow: hidden;
 }
 
+
+/*
+* Responsive layout for smaller displays < 800px
+*/
+@media screen and (max-width: 1000px){
+  .video-box{
+    width: 90%;
+  }
+
+  .description-box{
+    width: 90%;
+    margin-top: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto;
+  }
+
+  .reviews-box{
+    width: 90%;
+    height: auto;
+  }
+
+  .recommendations-box{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .search-container{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .search-container{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .title{
+    font-size: 32px;
+    margin-top: 8px;
+  }
+}

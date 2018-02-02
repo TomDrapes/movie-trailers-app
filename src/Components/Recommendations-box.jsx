@@ -16,6 +16,7 @@ export default class RecommendationsBox extends Component{
     componentDidUpdate(){
         //This will scroll the ref div to the top on update to maintain the absolute
         //positioned header
+        console.log('triggered');
         this._div.scrollTop = 0;
     }
 
@@ -45,7 +46,7 @@ export default class RecommendationsBox extends Component{
         });
         return (
             //Set div as ref to be able to reset scroll on updates
-            <div className='recommendations-box' ref={(ref) => this._div = ref}>
+            <div className='recommendations-box' ref={(ref) => this._div = ref} onresize="this.componentDidUpdate()">
                 <div className="recommendations-overlay">
                     <h2>RECOMMENDATIONS</h2>
                 </div>
